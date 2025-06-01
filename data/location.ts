@@ -1,3 +1,4 @@
+import { Contact } from "./contants";
 
 export const locations = [
   {
@@ -6,7 +7,7 @@ export const locations = [
     address: "151 Lavender Hill",
     city: "London",
     postcode: "SW11 5QJ",
-    phone: "+44 20 7946 0958",
+    phone: Contact.LONDON_PHONE,
     email: "london@agelessblissful.com",
     image: "https://i.pinimg.com/originals/9a/22/61/9a2261b14ef3fb8bae5f4da4ddfa7acc.jpg",
     interiorImage: "https://i.pinimg.com/736x/cc/66/0e/cc660ee6f8f8b2559d691c077f9a4f63.jpg",
@@ -48,7 +49,7 @@ export const locations = [
     address: "Abington Street",
     city: "Northampton",
     postcode: "NN1 2AJ",
-    phone: "+44 1604 123456",
+    phone: Contact.NORTHAMPTON_PHONE,
     email: "northampton@agelessblissful.com",
     image: "https://i.pinimg.com/originals/79/a4/d4/79a4d4b9990351bc3ee1c996ef26e48b.jpg",
     interiorImage: "https://i.pinimg.com/736x/66/e0/84/66e084b0fb0c83882d1b05c08daa7091.jpg",
@@ -90,7 +91,7 @@ export const locations = [
     address: "24 Awoniyi Street, off Oslo Way",
     city: "Ajao Estate, Lagos",
     postcode: "101233",
-    phone: "+234 123 456 7890",
+    phone: Contact.LAGOS_PHONE,
     email: "lagos@agelessblissful.com",
     image: "https://i.pinimg.com/originals/9a/22/61/9a2261b14ef3fb8bae5f4da4ddfa7acc.jpg",
     interiorImage: "https://i.pinimg.com/736x/cc/66/0e/cc660ee6f8f8b2559d691c077f9a4f63.jpg",

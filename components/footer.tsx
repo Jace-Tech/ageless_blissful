@@ -16,6 +16,7 @@ import {
   Award
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { Contact } from '@/data/contants'
 
 const socialLinks = [
   { name: 'Facebook', href: 'https://facebook.com/agelessblissful', icon: Facebook },
@@ -157,19 +158,28 @@ export default function Footer() {
               <div className="flex items-center space-x-3">
                 <Phone className="w-4 h-4 text-primary" />
                 <Link
-                  href="tel:+442079460958"
+                  href={`tel:${Contact.LONDON_PHONE}`}
                   className="text-sm text-muted-foreground hover:text-primary transition-colors"
                 >
-                  +44 20 7946 0958
+                  {Contact.LONDON_PHONE}
+                </Link>
+              </div>
+              <div className="flex items-center space-x-3">
+                <Phone className="w-4 h-4 text-primary" />
+                <Link
+                  href={`tel:${Contact.LAGOS_PHONE}`}
+                  className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                >
+                  {Contact.LAGOS_PHONE}
                 </Link>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="w-4 h-4 text-primary" />
                 <Link
-                  href="mailto:info@agelessblissful.com"
+                  href={`mailto:${Contact.INFO_EMAIL}`}
                   className="text-sm text-muted-foreground hover:text-primary transition-colors"
                 >
-                  info@agelessblissful.com
+                  {Contact.INFO_EMAIL}
                 </Link>
               </div>
               <div className="flex items-start space-x-3">

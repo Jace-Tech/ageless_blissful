@@ -25,6 +25,8 @@ import Header from '@/components/header'
 import Footer from '@/components/footer'
 import Link from 'next/link'
 import { toast } from 'sonner'
+import { locations as companyLocations } from '@/data/location'
+import { Contact } from '@/data/contants'
 
 const services = [
   "Botox Treatments",
@@ -91,7 +93,7 @@ export default function BookPage() {
         `Please confirm this appointment or suggest alternative times.`
       )
 
-      const mailtoLink = `mailto:bookings@agelessblissful.com?subject=${subject}&body=${body}`
+      const mailtoLink = `mailto:${Contact.BOOKING_EMAIL}?subject=${subject}&body=${body}`
       window.location.href = mailtoLink
 
       toast.success("Booking request sent! We'll contact you within 24 hours to confirm your appointment.")
@@ -380,37 +382,21 @@ export default function BookPage() {
                 <CardContent className="p-6">
                   <h3 className="text-lg font-semibold mb-4">Contact Information</h3>
                   <div className="space-y-3 text-sm">
-                    <div className="flex items-center space-x-3">
-                      <Phone className="w-4 h-4 text-primary" />
-                      <div>
-                        <p className="font-medium">London</p>
-                        <Link href="tel:+442079460958" className="text-primary hover:underline">
-                          +44 20 7946 0958
-                        </Link>
+                    {companyLocations.map((location, index) => (
+                      <div className="flex items-center space-x-3">
+                        <Phone className="w-4 h-4 text-primary" />
+                        <div>
+                          <p className="font-medium">{location.name}</p>
+                          <Link href={`tel:${location.phone}`} className="text-primary hover:underline">
+                            {location.phone}
+                          </Link>
+                        </div>
                       </div>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <Phone className="w-4 h-4 text-primary" />
-                      <div>
-                        <p className="font-medium">Northampton</p>
-                        <Link href="tel:+441604123456" className="text-primary hover:underline">
-                          +44 1604 123456
-                        </Link>
-                      </div>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <Phone className="w-4 h-4 text-primary" />
-                      <div>
-                        <p className="font-medium">Lagos</p>
-                        <Link href="#" className="text-primary hover:underline">
-                          +234 812 345 6789
-                        </Link>
-                      </div>
-                    </div>
+                    ))}
                     <div className="flex items-center space-x-3">
                       <Mail className="w-4 h-4 text-primary" />
-                      <Link href="mailto:bookings@agelessblissful.com" className="text-primary hover:underline">
-                        bookings@agelessblissful.com
+                      <Link href={`mailto:${Contact.BOOKING_EMAIL}`} className="text-primary hover:underline">
+                        {Contact.BOOKING_EMAIL}
                       </Link>
                     </div>
                   </div>

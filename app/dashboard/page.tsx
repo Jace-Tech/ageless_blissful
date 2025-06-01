@@ -2,18 +2,12 @@
 
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { 
-  Calendar, 
-  Users, 
-  Mail, 
-  Phone,
-  Clock,
-  CheckCircle,
-  AlertCircle,
-  TrendingUp,
+import {
+  Calendar,
+  Users,
+  Mail, Clock, TrendingUp,
   MapPin
 } from 'lucide-react'
-import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import Header from '@/components/header'
@@ -54,14 +48,14 @@ export default function DashboardPage() {
           fetch('/api/appointments'),
           fetch('/api/contacts')
         ])
-        
+
         const appointmentsData = await appointmentsRes.json()
         const contactsData = await contactsRes.json()
-        
+
         if (appointmentsData.success) {
           setAppointments(appointmentsData.appointments)
         }
-        
+
         if (contactsData.success) {
           setContacts(contactsData.contacts)
         }
@@ -99,7 +93,7 @@ export default function DashboardPage() {
   return (
     <div className="min-h-screen">
       <Header />
-      
+
       {/* Hero Section */}
       <section className="pt-24 pb-16 bg-gradient-to-br from-primary/10 via-background to-secondary/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -22,6 +22,7 @@ import Header from '@/components/header'
 import Footer from '@/components/footer'
 import Link from 'next/link'
 import { toast } from 'sonner'
+import { Contact } from '@/data/contants'
 
 const contactInfo = [
   {
@@ -36,8 +37,8 @@ const contactInfo = [
     icon: Mail,
     title: "Email",
     details: [
-      { label: "General Inquiries", value: "info@agelessblissful.com", href: "mailto:info@agelessblissful.com" },
-      { label: "Bookings", value: "bookings@agelessblissful.com", href: "mailto:bookings@agelessblissful.com" }
+      { label: "General Inquiries", value: Contact.INFO_EMAIL, href: `mailto:${Contact.INFO_EMAIL}` },
+      { label: "Bookings", value: Contact.BOOKING_EMAIL, href: `mailto:${Contact.BOOKING_EMAIL}` }
     ]
   },
   {
@@ -104,7 +105,7 @@ export default function ContactPage() {
         `Message:\n${formData.message}`
       )
 
-      const mailtoLink = `mailto:info@agelessblissful.com?subject=${subject}&body=${body}`
+      const mailtoLink = `mailto:${Contact.INFO_EMAIL}?subject=${subject}&body=${body}`
       window.location.href = mailtoLink
 
       toast.success("Email client opened! Please send the email to complete your inquiry.")

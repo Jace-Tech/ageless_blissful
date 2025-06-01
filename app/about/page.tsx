@@ -147,12 +147,6 @@ export default function AboutPage() {
                   className="object-cover"
                 />
               </div>
-              <div className="absolute -bottom-6 -left-6 bg-primary text-primary-foreground p-6 rounded-2xl shadow-xl">
-                <div className="text-center">
-                  <div className="text-2xl font-bold">Est. 2019</div>
-                  <div className="text-sm opacity-90">Serving London, Northampton & Lagos</div>
-                </div>
-              </div>
             </motion.div>
           </div>
         </div>
@@ -169,7 +163,7 @@ export default function AboutPage() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Meet <span className="gradient-text">Juliet Asemota</span>
+              Meet <span className="gradient-text">Juliet Simon Peter</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Lead Aesthetic Practitioner & Founder
@@ -186,8 +180,8 @@ export default function AboutPage() {
             >
               <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl">
                 <Image
-                  src="https://i.pinimg.com/originals/0c/49/08/0c49085f860988e12ab31c02bc0ff134.jpg"
-                  alt="Juliet Asemota - Lead Aesthetic Practitioner"
+                  src="https://res.cloudinary.com/jace-dev/image/upload/v1748808401/PHOTO-2025-06-01-20-27-29_z42us7.jpg"
+                  alt="Juliet Simon Peter - Lead Aesthetic Practitioner"
                   fill
                   className="object-cover"
                 />
@@ -203,8 +197,8 @@ export default function AboutPage() {
             >
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
-                  Juliet Asemota is the founder and lead aesthetic practitioner at Ageless Blissful.
-                  With over 10 years of experience in nursing and specialized training in aesthetic medicine,
+                  Juliet Simon Peter is the founder and lead aesthetic practitioner at Ageless Blissful.
+                  With 2 years of experience in nursing and specialized training in aesthetic medicine,
                   Juliet brings a unique combination of medical expertise and artistic vision to every treatment.
                 </p>
                 <p>
