@@ -5,24 +5,21 @@ import { motion, useScroll, useTransform } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import Image from 'next/image'
 import Link from 'next/link'
-import { 
-  Star, 
-  Users, 
-  Award, 
-  Clock, 
-  ArrowRight, 
-  CheckCircle, 
+import {
+  Star,
+  Users,
+  Award, ArrowRight,
+  CheckCircle,
   Heart,
   Sparkles,
   Shield,
-  Calendar,
-  MapPin,
-  Phone
+  Calendar, Phone
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import Header from '@/components/header'
 import Footer from '@/components/footer'
+import LocationSection from '@/components/location'
 
 // Animated counter component
 function AnimatedCounter({ end, duration = 2000, suffix = "" }: { end: number; duration?: number; suffix?: string }) {
@@ -33,18 +30,18 @@ function AnimatedCounter({ end, duration = 2000, suffix = "" }: { end: number; d
     if (inView) {
       let startTime: number
       const startCount = 0
-      
+
       const updateCount = (timestamp: number) => {
         if (!startTime) startTime = timestamp
         const progress = Math.min((timestamp - startTime) / duration, 1)
         const currentCount = Math.floor(progress * (end - startCount) + startCount)
         setCount(currentCount)
-        
+
         if (progress < 1) {
           requestAnimationFrame(updateCount)
         }
       }
-      
+
       requestAnimationFrame(updateCount)
     }
   }, [inView, end, duration])
@@ -119,11 +116,11 @@ export default function HomePage() {
   return (
     <div className="min-h-screen">
       <Header />
-      
+
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Background Image with Parallax */}
-        <motion.div 
+        <motion.div
           className="absolute inset-0 z-0"
           style={{ y: y1 }}
         >
@@ -147,7 +144,7 @@ export default function HomePage() {
             transition={{ duration: 0.8 }}
             className="space-y-6"
           >
-            <motion.h1 
+            <motion.h1
               className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -156,8 +153,8 @@ export default function HomePage() {
               Discover Your
               <span className="block gradient-text">Ageless Beauty</span>
             </motion.h1>
-            
-            <motion.p 
+
+            <motion.p
               className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -166,7 +163,7 @@ export default function HomePage() {
               Experience premium aesthetic treatments with natural results at our luxury clinics in London, Northampton, and Lagos
             </motion.p>
 
-            <motion.div 
+            <motion.div
               className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -187,7 +184,7 @@ export default function HomePage() {
             </motion.div>
 
             {/* Trust Indicators */}
-            <motion.div 
+            <motion.div
               className="flex flex-wrap justify-center items-center gap-8 pt-12 text-white/80"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -210,7 +207,7 @@ export default function HomePage() {
         </div>
 
         {/* Scroll Indicator */}
-        <motion.div 
+        <motion.div
           className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
@@ -224,7 +221,7 @@ export default function HomePage() {
       {/* Stats Section */}
       <section className="py-20 bg-muted/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div 
+          <motion.div
             className="grid grid-cols-2 md:grid-cols-4 gap-8"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -262,7 +259,7 @@ export default function HomePage() {
       {/* Services Section */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div 
+          <motion.div
             className="text-center mb-16"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -325,7 +322,7 @@ export default function HomePage() {
             ))}
           </div>
 
-          <motion.div 
+          <motion.div
             className="text-center mt-12"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -357,7 +354,7 @@ export default function HomePage() {
                 Meet <span className="gradient-text">Juliet Asemota</span>
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                With a background in nursing and years of specialized training in aesthetic medicine, 
+                With a background in nursing and years of specialized training in aesthetic medicine,
                 Juliet brings expertise, artistry, and a commitment to natural-looking results to every treatment.
               </p>
               <div className="space-y-4">
@@ -411,7 +408,7 @@ export default function HomePage() {
       {/* Testimonials Section */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div 
+          <motion.div
             className="text-center mb-16"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -468,104 +465,11 @@ export default function HomePage() {
       </section>
 
       {/* Locations Section */}
-      <section className="py-20 bg-muted/30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div 
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Visit Our <span className="gradient-text">Locations</span>
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Conveniently located in London, Northampton, and Lagos for your aesthetic treatment needs
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* London Location */}
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              <Card className="hover:shadow-xl transition-all duration-300 border-0 bg-card/50 backdrop-blur-sm">
-                <CardContent className="p-6 space-y-4">
-                  <div className="flex items-center space-x-3">
-                    <MapPin className="w-6 h-6 text-primary" />
-                    <h3 className="text-2xl font-semibold">London Clinic</h3>
-                  </div>
-                  <div className="space-y-2">
-                    <p className="text-muted-foreground">151 Lavender Hill</p>
-                    <p className="text-muted-foreground">London SW11 5QJ</p>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <Phone className="w-5 h-5 text-primary" />
-                    <Link href="tel:+442079460958" className="text-primary hover:underline">
-                      +44 20 7946 0958
-                    </Link>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <Clock className="w-5 h-5 text-primary" />
-                    <span className="text-muted-foreground">Mon-Fri: 9AM-6PM, Sat: 9AM-5PM</span>
-                  </div>
-                  <Button asChild className="w-full">
-                    <Link href="/locations#london">
-                      <MapPin className="w-4 h-4 mr-2" />
-                      View Details
-                    </Link>
-                  </Button>
-                </CardContent>
-              </Card>
-            </motion.div>
-
-            {/* Northampton Location */}
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              <Card className="hover:shadow-xl transition-all duration-300 border-0 bg-card/50 backdrop-blur-sm">
-                <CardContent className="p-6 space-y-4">
-                  <div className="flex items-center space-x-3">
-                    <MapPin className="w-6 h-6 text-primary" />
-                    <h3 className="text-2xl font-semibold">Northampton Clinic</h3>
-                  </div>
-                  <div className="space-y-2">
-                    <p className="text-muted-foreground">Abington Street</p>
-                    <p className="text-muted-foreground">Northampton NN1 2AJ</p>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <Phone className="w-5 h-5 text-primary" />
-                    <Link href="tel:+441604123456" className="text-primary hover:underline">
-                      +44 1604 123456
-                    </Link>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <Clock className="w-5 h-5 text-primary" />
-                    <span className="text-muted-foreground">Mon-Fri: 9AM-6PM, Sat: 9AM-5PM</span>
-                  </div>
-                  <Button asChild className="w-full">
-                    <Link href="/locations#northampton">
-                      <MapPin className="w-4 h-4 mr-2" />
-                      View Details
-                    </Link>
-                  </Button>
-                </CardContent>
-              </Card>
-            </motion.div>
-          </div>
-        </div>
-      </section>
+      <LocationSection subtitle="Conveniently located in London, Northampton, and Lagos for your aesthetic treatment needs" title="Locations" />
 
       {/* CTA Section */}
       <section className="py-20 relative overflow-hidden">
-        <motion.div 
+        <motion.div
           className="absolute inset-0 z-0"
           style={{ y: y2 }}
         >

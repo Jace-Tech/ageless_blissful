@@ -3,22 +3,20 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
-import { 
-  Award, 
-  Heart, 
-  Shield, 
-  Users, 
-  Star, 
+import {
+  Heart,
+  Shield,
+  Users,
+  Star,
   Calendar,
   CheckCircle,
-  Sparkles,
-  Clock,
-  MapPin
+  Sparkles
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import Header from '@/components/header'
 import Footer from '@/components/footer'
+import LocationSection from '@/components/location'
 
 const values = [
   {
@@ -75,7 +73,7 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen">
       <Header />
-      
+
       {/* Hero Section */}
       <section className="pt-24 pb-16 bg-gradient-to-br from-primary/10 via-background to-secondary/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -111,18 +109,18 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
-                  Ageless Blissful was founded with a simple yet powerful vision: to help people feel confident 
-                  and beautiful in their own skin. Our journey began with a passion for aesthetic medicine and 
+                  Ageless Blissful was founded with a simple yet powerful vision: to help people feel confident
+                  and beautiful in their own skin. Our journey began with a passion for aesthetic medicine and
                   a commitment to providing safe, effective treatments that enhance natural beauty.
                 </p>
                 <p>
-                  With locations in London, Northampton, and Lagos, we've built a reputation for excellence, 
-                  professionalism, and personalized care. Our approach combines medical expertise with 
+                  With locations in London, Northampton, and Lagos, we've built a reputation for excellence,
+                  professionalism, and personalized care. Our approach combines medical expertise with
                   an artistic eye, ensuring that every treatment is tailored to your unique features and goals.
                 </p>
                 <p>
-                  We believe that aesthetic treatments should be accessible, safe, and natural-looking. 
-                  That's why we invest in the latest techniques, premium products, and ongoing education 
+                  We believe that aesthetic treatments should be accessible, safe, and natural-looking.
+                  That's why we invest in the latest techniques, premium products, and ongoing education
                   to deliver the best possible results for our clients.
                 </p>
               </div>
@@ -205,17 +203,17 @@ export default function AboutPage() {
             >
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
-                  Juliet Asemota is the founder and lead aesthetic practitioner at Ageless Blissful. 
-                  With over 10 years of experience in nursing and specialized training in aesthetic medicine, 
+                  Juliet Asemota is the founder and lead aesthetic practitioner at Ageless Blissful.
+                  With over 10 years of experience in nursing and specialized training in aesthetic medicine,
                   Juliet brings a unique combination of medical expertise and artistic vision to every treatment.
                 </p>
                 <p>
-                  Her passion for helping people feel confident and beautiful led her to specialize in 
-                  non-surgical aesthetic treatments. Juliet believes in the power of subtle enhancements 
+                  Her passion for helping people feel confident and beautiful led her to specialize in
+                  non-surgical aesthetic treatments. Juliet believes in the power of subtle enhancements
                   that bring out each client's natural beauty while maintaining their unique character.
                 </p>
                 <p>
-                  Committed to excellence and safety, Juliet continuously updates her skills and knowledge 
+                  Committed to excellence and safety, Juliet continuously updates her skills and knowledge
                   through ongoing education and training in the latest aesthetic techniques and technologies.
                 </p>
               </div>
@@ -333,86 +331,7 @@ export default function AboutPage() {
       </section>
 
       {/* Locations Preview */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Visit Our <span className="gradient-text">Clinics</span>
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Conveniently located to serve you better
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              <Card className="hover:shadow-xl transition-all duration-300 border-0 bg-card/50 backdrop-blur-sm">
-                <CardContent className="p-6 space-y-4">
-                  <div className="flex items-center space-x-3">
-                    <MapPin className="w-6 h-6 text-primary" />
-                    <h3 className="text-2xl font-semibold">London Clinic</h3>
-                  </div>
-                  <div className="space-y-2">
-                    <p className="text-muted-foreground">151 Lavender Hill</p>
-                    <p className="text-muted-foreground">London SW11 5QJ</p>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <Clock className="w-5 h-5 text-primary" />
-                    <span className="text-muted-foreground">Mon-Fri: 9AM-6PM, Sat: 9AM-5PM</span>
-                  </div>
-                  <Button asChild className="w-full">
-                    <Link href="/locations#london">
-                      <MapPin className="w-4 h-4 mr-2" />
-                      View Location Details
-                    </Link>
-                  </Button>
-                </CardContent>
-              </Card>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              <Card className="hover:shadow-xl transition-all duration-300 border-0 bg-card/50 backdrop-blur-sm">
-                <CardContent className="p-6 space-y-4">
-                  <div className="flex items-center space-x-3">
-                    <MapPin className="w-6 h-6 text-primary" />
-                    <h3 className="text-2xl font-semibold">Northampton Clinic</h3>
-                  </div>
-                  <div className="space-y-2">
-                    <p className="text-muted-foreground">Abington Street</p>
-                    <p className="text-muted-foreground">Northampton NN1 2AJ</p>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <Clock className="w-5 h-5 text-primary" />
-                    <span className="text-muted-foreground">Mon-Fri: 9AM-6PM, Sat: 9AM-5PM</span>
-                  </div>
-                  <Button asChild className="w-full">
-                    <Link href="/locations#northampton">
-                      <MapPin className="w-4 h-4 mr-2" />
-                      View Location Details
-                    </Link>
-                  </Button>
-                </CardContent>
-              </Card>
-            </motion.div>
-          </div>
-        </div>
-      </section>
+      <LocationSection subtitle="Conveniently located to serve you better" title="Clinics" />
 
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-primary to-primary/80">

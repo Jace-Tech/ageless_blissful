@@ -2,12 +2,10 @@
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { 
-  Calendar, 
-  Clock, 
-  MapPin, 
-  User, 
-  Mail, 
+import {
+  Calendar,
+  Clock, User,
+  Mail,
   Phone,
   MessageSquare,
   CheckCircle,
@@ -41,7 +39,8 @@ const services = [
 
 const locations = [
   "London - Lavender Hill",
-  "Northampton - Abington Street"
+  "Northampton - Abington Street",
+  "Lagos - Ajao Estate"
 ]
 
 const timeSlots = [
@@ -91,12 +90,12 @@ export default function BookPage() {
         `Additional Message:\n${formData.message}\n\n` +
         `Please confirm this appointment or suggest alternative times.`
       )
-      
+
       const mailtoLink = `mailto:bookings@agelessblissful.com?subject=${subject}&body=${body}`
       window.location.href = mailtoLink
-      
+
       toast.success("Booking request sent! We'll contact you within 24 hours to confirm your appointment.")
-      
+
       // Reset form
       setFormData({
         name: '',
@@ -123,7 +122,7 @@ export default function BookPage() {
   return (
     <div className="min-h-screen">
       <Header />
-      
+
       {/* Hero Section */}
       <section className="pt-24 pb-16 bg-gradient-to-br from-primary/10 via-background to-secondary/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -174,7 +173,7 @@ export default function BookPage() {
                     <Calendar className="w-6 h-6 text-primary" />
                     <h2 className="text-2xl font-bold">Book Your Appointment</h2>
                   </div>
-                  
+
                   <form onSubmit={handleSubmit} className="space-y-6">
                     {/* Personal Information */}
                     <div className="space-y-4">
@@ -182,7 +181,7 @@ export default function BookPage() {
                         <User className="w-5 h-5 text-primary mr-2" />
                         Personal Information
                       </h3>
-                      
+
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div className="space-y-2">
                           <Label htmlFor="name">Full Name *</Label>
@@ -209,7 +208,7 @@ export default function BookPage() {
                           />
                         </div>
                       </div>
-                      
+
                       <div className="space-y-2">
                         <Label htmlFor="phone">Phone Number *</Label>
                         <Input
@@ -230,7 +229,7 @@ export default function BookPage() {
                         <Sparkles className="w-5 h-5 text-primary mr-2" />
                         Appointment Details
                       </h3>
-                      
+
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div className="space-y-2">
                           <Label htmlFor="service">Service of Interest *</Label>
@@ -247,7 +246,7 @@ export default function BookPage() {
                             </SelectContent>
                           </Select>
                         </div>
-                        
+
                         <div className="space-y-2">
                           <Label htmlFor="location">Preferred Location *</Label>
                           <Select onValueChange={(value) => handleSelectChange('location', value)} required>
@@ -264,7 +263,7 @@ export default function BookPage() {
                           </Select>
                         </div>
                       </div>
-                      
+
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div className="space-y-2">
                           <Label htmlFor="date">Preferred Date *</Label>
@@ -278,7 +277,7 @@ export default function BookPage() {
                             onChange={handleInputChange}
                           />
                         </div>
-                        
+
                         <div className="space-y-2">
                           <Label htmlFor="time">Preferred Time *</Label>
                           <Select onValueChange={(value) => handleSelectChange('time', value)} required>
@@ -303,7 +302,7 @@ export default function BookPage() {
                         <MessageSquare className="w-5 h-5 text-primary mr-2" />
                         Additional Information
                       </h3>
-                      
+
                       <div className="space-y-2">
                         <Label htmlFor="message">Message (Optional)</Label>
                         <Textarea
@@ -317,9 +316,9 @@ export default function BookPage() {
                       </div>
                     </div>
 
-                    <Button 
-                      type="submit" 
-                      size="lg" 
+                    <Button
+                      type="submit"
+                      size="lg"
                       className="w-full"
                       disabled={isSubmitting}
                     >
@@ -396,6 +395,15 @@ export default function BookPage() {
                         <p className="font-medium">Northampton</p>
                         <Link href="tel:+441604123456" className="text-primary hover:underline">
                           +44 1604 123456
+                        </Link>
+                      </div>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <Phone className="w-4 h-4 text-primary" />
+                      <div>
+                        <p className="font-medium">Lagos</p>
+                        <Link href="#" className="text-primary hover:underline">
+                          +234 812 345 6789
                         </Link>
                       </div>
                     </div>

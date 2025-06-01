@@ -2,13 +2,13 @@
 
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { 
-  MapPin, 
-  Phone, 
-  Mail, 
-  Clock, 
-  Facebook, 
-  Instagram, 
+import {
+  MapPin,
+  Phone,
+  Mail,
+  Clock,
+  Facebook,
+  Instagram,
   Youtube,
   Heart,
   Calendar,
@@ -60,7 +60,7 @@ export default function Footer() {
               <h3 className="text-xl font-bold gradient-text">Ageless Blissful</h3>
             </div>
             <p className="text-muted-foreground text-sm leading-relaxed">
-              Premium aesthetic treatments with a focus on natural enhancement and client safety. 
+              Premium aesthetic treatments with a focus on natural enhancement and client safety.
               Experience luxury care at our London, Northampton, and Lagos locations.
             </p>
             <div className="flex space-x-4">
@@ -147,9 +147,16 @@ export default function Footer() {
                   <p>Abington Street, NN1 2AJ</p>
                 </div>
               </div>
+              <div className="flex items-start space-x-3">
+                <MapPin className="w-4 h-4 text-primary mt-1 flex-shrink-0" />
+                <div className="text-sm text-muted-foreground">
+                  <p className="font-medium">Lagos</p>
+                  <p>24 Awoniyi Street, off Oslo Way, Ajao Estate</p>
+                </div>
+              </div>
               <div className="flex items-center space-x-3">
                 <Phone className="w-4 h-4 text-primary" />
-                <Link 
+                <Link
                   href="tel:+442079460958"
                   className="text-sm text-muted-foreground hover:text-primary transition-colors"
                 >
@@ -158,7 +165,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="w-4 h-4 text-primary" />
-                <Link 
+                <Link
                   href="mailto:info@agelessblissful.com"
                   className="text-sm text-muted-foreground hover:text-primary transition-colors"
                 >
@@ -216,20 +223,20 @@ export default function Footer() {
               © 2024 Ageless Blissful. All rights reserved.
             </p>
             <div className="flex items-center space-x-6">
-              <Link 
-                href="/privacy" 
+              <Link
+                href="/privacy"
                 className="text-sm text-muted-foreground hover:text-primary transition-colors"
               >
                 Privacy Policy
               </Link>
-              <Link 
-                href="/terms" 
+              <Link
+                href="/terms"
                 className="text-sm text-muted-foreground hover:text-primary transition-colors"
               >
                 Terms of Service
               </Link>
-              <Link 
-                href="/cookies" 
+              <Link
+                href="/cookies"
                 className="text-sm text-muted-foreground hover:text-primary transition-colors"
               >
                 Cookie Policy
