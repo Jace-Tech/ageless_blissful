@@ -107,6 +107,46 @@ const locations = [
       "Northampton Station - 10 min walk",
       "Delapré Abbey - 15 min drive"
     ]
+  },
+  {
+    id: "lagos",
+    name: "Lagos Clinic",
+    address: "24 Awoniyi Street, off Oslo Way",
+    city: "Ajao Estate, Lagos",
+    postcode: "101233",
+    phone: "+234 123 456 7890",
+    email: "lagos@agelessblissful.com",
+    image: "https://i.pinimg.com/originals/9a/22/61/9a2261b14ef3fb8bae5f4da4ddfa7acc.jpg",
+    interiorImage: "https://i.pinimg.com/736x/cc/66/0e/cc660ee6f8f8b2559d691c077f9a4f63.jpg",
+    description: "Our Lagos clinic offers premium aesthetic treatments in the heart of Ajao Estate. Experience world-class care in a serene and modern environment.",
+    features: [
+      "Modern treatment facilities",
+      "Comfortable waiting area",
+      "Convenient location",
+      "Air-conditioned environment",
+      "Complimentary WiFi",
+      "Refreshment area"
+    ],
+    openingHours: {
+      "Monday": "9:00 AM - 6:00 PM",
+      "Tuesday": "9:00 AM - 6:00 PM",
+      "Wednesday": "9:00 AM - 6:00 PM",
+      "Thursday": "9:00 AM - 6:00 PM",
+      "Friday": "9:00 AM - 6:00 PM",
+      "Saturday": "9:00 AM - 5:00 PM",
+      "Sunday": "Closed"
+    },
+    transport: {
+      parking: "Street parking available",
+      accessibility: "Ground floor access",
+      bus: "Nearby bus routes"
+    },
+    nearby: [
+      "Ajao Estate Market - 5 min walk",
+      "Oslo Way - 2 min walk",
+      "Murtala Muhammed International Airport - 15 min drive",
+      "Ikeja City Mall - 20 min drive"
+    ]
   }
 ]
 
@@ -128,12 +168,12 @@ export default function LocationsPage() {
               Our <span className="gradient-text">Locations</span>
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-              Visit our premium clinics in London and Northampton for exceptional aesthetic treatments
+              Visit our premium clinics in London, Northampton, and Lagos for exceptional aesthetic treatments
             </p>
             <div className="flex flex-wrap justify-center gap-4 pt-4">
               <Badge variant="secondary" className="px-4 py-2">
                 <MapPin className="w-4 h-4 mr-2" />
-                2 Convenient Locations
+                3 Convenient Locations
               </Badge>
               <Badge variant="secondary" className="px-4 py-2">
                 <Accessibility className="w-4 h-4 mr-2" />

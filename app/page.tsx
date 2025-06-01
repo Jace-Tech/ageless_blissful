@@ -163,7 +163,7 @@ export default function HomePage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              Experience premium aesthetic treatments with natural results at our luxury clinics in London and Northampton
+              Experience premium aesthetic treatments with natural results at our luxury clinics in London, Northampton, and Lagos
             </motion.p>
 
             <motion.div 
@@ -481,7 +481,7 @@ export default function HomePage() {
               Visit Our <span className="gradient-text">Locations</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Conveniently located in London and Northampton for your aesthetic treatment needs
+              Conveniently located in London, Northampton, and Lagos for your aesthetic treatment needs
             </p>
           </motion.div>
 

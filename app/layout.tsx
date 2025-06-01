@@ -7,9 +7,9 @@ import { Toaster } from 'sonner'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Ageless Blissful - Premium Aesthetic Treatments in London & Northampton',
-  description: 'Experience luxury aesthetic treatments at Ageless Blissful. Offering Botox, fillers, PRP, microneedling, and more at our London and Northampton locations. Book your consultation today.',
-  keywords: 'aesthetic treatments, botox, fillers, PRP, microneedling, beauty clinic, London, Northampton, anti-aging, skincare',
+  title: 'Ageless Blissful - Premium Aesthetic Treatments in London, Northampton & Lagos',
+  description: 'Experience luxury aesthetic treatments at Ageless Blissful. Offering Botox, fillers, PRP, microneedling, and more at our London, Northampton, and Lagos locations. Book your consultation today.',
+  keywords: 'aesthetic treatments, botox, fillers, PRP, microneedling, beauty clinic, London, Northampton, Lagos, anti-aging, skincare',
   authors: [{ name: 'Ageless Blissful' }],
   openGraph: {
     title: 'Ageless Blissful - Premium Aesthetic Treatments',

@@ -35,7 +35,7 @@ const faqCategories = [
       },
       {
         question: "How do I book an appointment?",
-        answer: "You can book an appointment through our online booking system, call us directly, or visit one of our clinics. We offer appointments at both our London and Northampton locations, with flexible scheduling to accommodate your needs."
+        answer: "You can book an appointment through our online booking system, call us directly, or visit one of our clinics. We offer appointments at our London, Northampton, and Lagos locations, with flexible scheduling to accommodate your needs."
       }
     ]
   },

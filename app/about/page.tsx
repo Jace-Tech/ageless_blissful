@@ -116,7 +116,7 @@ export default function AboutPage() {
                   a commitment to providing safe, effective treatments that enhance natural beauty.
                 </p>
                 <p>
-                  With locations in London and Northampton, we've built a reputation for excellence, 
+                  With locations in London, Northampton, and Lagos, we've built a reputation for excellence, 
                   professionalism, and personalized care. Our approach combines medical expertise with 
                   an artistic eye, ensuring that every treatment is tailored to your unique features and goals.
                 </p>
@@ -152,7 +152,7 @@ export default function AboutPage() {
               <div className="absolute -bottom-6 -left-6 bg-primary text-primary-foreground p-6 rounded-2xl shadow-xl">
                 <div className="text-center">
                   <div className="text-2xl font-bold">Est. 2019</div>
-                  <div className="text-sm opacity-90">Serving London & Northampton</div>
+                  <div className="text-sm opacity-90">Serving London, Northampton & Lagos</div>
                 </div>
               </div>
             </motion.div>

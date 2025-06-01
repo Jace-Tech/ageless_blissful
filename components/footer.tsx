@@ -61,7 +61,7 @@ export default function Footer() {
             </div>
             <p className="text-muted-foreground text-sm leading-relaxed">
               Premium aesthetic treatments with a focus on natural enhancement and client safety. 
-              Experience luxury care at our London and Northampton locations.
+              Experience luxury care at our London, Northampton, and Lagos locations.
             </p>
             <div className="flex space-x-4">
               {socialLinks.map((social) => (

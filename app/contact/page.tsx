@@ -2,17 +2,15 @@
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { 
-  MapPin, 
-  Phone, 
-  Mail, 
-  Clock, 
+import {
+  MapPin,
+  Phone,
+  Mail,
+  Clock,
   Send,
   MessageCircle,
   Calendar,
-  CheckCircle,
-  User,
-  MessageSquare
+  CheckCircle, MessageSquare
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
@@ -47,7 +45,8 @@ const contactInfo = [
     title: "Locations",
     details: [
       { label: "London", value: "151 Lavender Hill, SW11 5QJ", href: "/locations#london" },
-      { label: "Northampton", value: "Abington Street, NN1 2AJ", href: "/locations#northampton" }
+      { label: "Northampton", value: "Abington Street, NN1 2AJ", href: "/locations#northampton" },
+      { label: "Lagos", value: "24 Awoniyi Street, off Oslo Way, Ajao Estate", href: "/locations#lagos" }
     ]
   },
   {
@@ -104,12 +103,12 @@ export default function ContactPage() {
         `Subject: ${formData.subject}\n\n` +
         `Message:\n${formData.message}`
       )
-      
+
       const mailtoLink = `mailto:info@agelessblissful.com?subject=${subject}&body=${body}`
       window.location.href = mailtoLink
-      
+
       toast.success("Email client opened! Please send the email to complete your inquiry.")
-      
+
       // Reset form
       setFormData({
         name: '',
@@ -128,7 +127,7 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen">
       <Header />
-      
+
       {/* Hero Section */}
       <section className="pt-24 pb-16 bg-gradient-to-br from-primary/10 via-background to-secondary/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -186,7 +185,7 @@ export default function ContactPage() {
                         <div key={idx} className="text-sm">
                           <p className="font-medium text-muted-foreground">{detail.label}</p>
                           {detail.href ? (
-                            <Link 
+                            <Link
                               href={detail.href}
                               className="text-primary hover:underline"
                             >
@@ -223,7 +222,7 @@ export default function ContactPage() {
                     <MessageCircle className="w-6 h-6 text-primary" />
                     <h3 className="text-2xl font-bold">Send us a Message</h3>
                   </div>
-                  
+
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div className="space-y-2">
@@ -294,9 +293,9 @@ export default function ContactPage() {
                       />
                     </div>
 
-                    <Button 
-                      type="submit" 
-                      size="lg" 
+                    <Button
+                      type="submit"
+                      size="lg"
                       className="w-full"
                       disabled={isSubmitting}
                     >
@@ -438,7 +437,7 @@ export default function ContactPage() {
               Visit Our <span className="gradient-text">Clinics</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Find us at our convenient locations in London and Northampton
+              Find us at our convenient locations in London, Northampton, and Lagos
             </p>
           </motion.div>
 
