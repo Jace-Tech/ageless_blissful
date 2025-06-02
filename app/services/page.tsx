@@ -3,11 +3,11 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
-import { 
-  Sparkles, 
-  Clock, 
-  Star, 
-  CheckCircle, 
+import {
+  Sparkles,
+  Clock,
+  Star,
+  CheckCircle,
   Calendar,
   ArrowRight,
   Shield,
@@ -264,15 +264,14 @@ const faqs = [
 export default function ServicesPage() {
   return (
     <div className="min-h-screen">
-      <Header />
-      
       {/* Promotional Banner */}
       <div className="bg-gradient-to-r from-rose-500 to-pink-500 text-white py-3 px-4 text-center">
         <p className="text-lg font-medium">
           🎉 Limited Time Offer: <span className="font-bold">50% off for models</span> and <span className="font-bold">25% off all services</span> - Book your consultation today! 🎉
         </p>
       </div>
-      
+      <Header />
+
       {/* Hero Section */}
       <section className="pt-24 pb-16 bg-gradient-to-br from-primary/10 via-background to-secondary/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -318,9 +317,8 @@ export default function ServicesPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
-                className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${
-                  index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''
-                }`}
+                className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''
+                  }`}
               >
                 {/* Image */}
                 <div className={`relative ${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>

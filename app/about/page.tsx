@@ -56,7 +56,7 @@ const achievements = [
     label: "Happy Clients"
   },
   {
-    number: "5+",
+    number: "2+",
     label: "Years Experience"
   },
   {
@@ -64,7 +64,7 @@ const achievements = [
     label: "Satisfaction Rate"
   },
   {
-    number: "15+",
+    number: "6+",
     label: "Treatments Offered"
   }
 ]

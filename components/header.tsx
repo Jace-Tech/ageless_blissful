@@ -42,8 +42,9 @@ export default function Header() {
   }, [])
 
   return (
+
     <motion.header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
+      className={`sticky top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
         ? 'glass backdrop-blur-md shadow-lg'
         : 'bg-transparent'
         }`}
@@ -116,7 +117,7 @@ export default function Header() {
             </DropdownMenu>
 
             <Button asChild size="sm" variant="outline">
-              <Link href={isNigerian ? Contact.LAGOS_PHONE : Contact.LONDON_PHONE}>
+              <Link href={`tel:${isNigerian ? Contact.LAGOS_PHONE : Contact.LONDON_PHONE}`}>
                 <Phone className="w-4 h-4 mr-2" />
                 Call Now
               </Link>
@@ -192,7 +193,7 @@ export default function Header() {
                 ))}
                 <div className="pt-4 space-y-2">
                   <Button asChild size="sm" variant="outline" className="w-full">
-                    <Link href={isNigerian ? Contact.LAGOS_PHONE : Contact.LONDON_PHONE} onClick={() => setIsOpen(false)}>
+                    <Link href={`tel:${isNigerian ? Contact.LAGOS_PHONE : Contact.LONDON_PHONE}`} onClick={() => setIsOpen(false)}>
                       <Phone className="w-4 h-4 mr-2" />
                       Call Now
                     </Link>
