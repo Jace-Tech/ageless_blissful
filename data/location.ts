@@ -90,7 +90,7 @@ export const locations = [
   {
     id: "lagos",
     name: "Lagos Clinic",
-    address: "24 Awoniyi Street, off Oslo Way",
+    address: "24 Awoniyi Street, off Osolo Way",
     city: "Ajao Estate, Lagos",
     postcode: "101233",
     phone: Contact.LAGOS_PHONE,
@@ -124,7 +124,7 @@ export const locations = [
     nearestStation: "Mushin, Ikeja 102215, Lagos",
     nearby: [
       "Ajao Estate Market - 5 min walk",
-      "Oslo Way - 2 min walk",
+      "Osolo Way - 2 min walk",
       "Murtala Muhammed International Airport - 15 min drive",
       "Ikeja City Mall - 20 min drive"
     ]

@@ -152,7 +152,7 @@ export default function Footer() {
                 <MapPin className="w-4 h-4 text-primary mt-1 flex-shrink-0" />
                 <div className="text-sm text-muted-foreground">
                   <p className="font-medium">Lagos</p>
-                  <p>24 Awoniyi Street, off Oslo Way, Ajao Estate</p>
+                  <p>24 Awoniyi Street, off Osolo Way, Ajao Estate</p>
                 </div>
               </div>
               <div className="flex items-center space-x-3">

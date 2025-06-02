@@ -50,7 +50,7 @@ const contactInfo = [
     details: [
       { label: "London", value: "151 Lavender Hill, SW11 5QJ", href: "/locations#london" },
       { label: "Northampton", value: "Abington Street, NN1 2AJ", href: "/locations#northampton" },
-      { label: "Lagos", value: "24 Awoniyi Street, off Oslo Way, Ajao Estate", href: "/locations#lagos" }
+      { label: "Lagos", value: "24 Awoniyi Street, off Osolo Way, Ajao Estate", href: "/locations#lagos" }
     ]
   },
   {
