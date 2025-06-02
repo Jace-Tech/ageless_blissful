@@ -264,12 +264,6 @@ const faqs = [
 export default function ServicesPage() {
   return (
     <div className="min-h-screen">
-      {/* Promotional Banner */}
-      <div className="bg-gradient-to-r from-rose-500 to-pink-500 text-white py-3 px-4 text-center">
-        <p className="text-lg font-medium">
-          🎉 Limited Time Offer: <span className="font-bold">50% off for models</span> and <span className="font-bold">25% off all services</span> - Book your consultation today! 🎉
-        </p>
-      </div>
       <Header />
 
       {/* Hero Section */}
