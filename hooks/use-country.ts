@@ -5,7 +5,7 @@ export const useCountry = () => {
 
   const handleFetchCountry = async () => {
     const response = await fetch('https://ipapi.co/country');
-    const data = await response.json();
+    const data = await response.text();
     setCountry(data);
   }
 
