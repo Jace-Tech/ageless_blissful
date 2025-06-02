@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, Calendar, Phone, MapPin, Sun, Moon, Monitor } from 'lucide-react'
+import { Menu, X, Calendar, Phone, Sun, Moon, Monitor } from 'lucide-react'
 import { useTheme } from 'next-themes'
 import { Button } from '@/components/ui/button'
 import {
@@ -13,6 +13,8 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
+import { useCountry } from '@/hooks/use-country'
+import { Contact } from '@/data/contants'
 
 const navigation = [
   { name: 'Home', href: '/' },
@@ -29,6 +31,7 @@ export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
   const pathname = usePathname()
   const { setTheme, theme } = useTheme()
+  const { isNigerian } = useCountry()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -40,11 +43,10 @@ export default function Header() {
 
   return (
     <motion.header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? 'glass backdrop-blur-md shadow-lg'
-          : 'bg-transparent'
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
+        ? 'glass backdrop-blur-md shadow-lg'
+        : 'bg-transparent'
+        }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6 }}
@@ -68,11 +70,10 @@ export default function Header() {
               <Link
                 key={item.name}
                 href={item.href}
-                className={`relative px-3 py-2 text-sm font-medium transition-colors duration-200 ${
-                  pathname === item.href
-                    ? 'text-primary'
-                    : 'text-foreground/80 hover:text-primary'
-                }`}
+                className={`relative px-3 py-2 text-sm font-medium transition-colors duration-200 ${pathname === item.href
+                  ? 'text-primary'
+                  : 'text-foreground/80 hover:text-primary'
+                  }`}
               >
                 {item.name}
                 {pathname === item.href && (
@@ -115,12 +116,12 @@ export default function Header() {
             </DropdownMenu>
 
             <Button asChild size="sm" variant="outline">
-              <Link href="tel:+442079460958">
+              <Link href={isNigerian ? Contact.LAGOS_PHONE : Contact.LONDON_PHONE}>
                 <Phone className="w-4 h-4 mr-2" />
                 Call Now
               </Link>
             </Button>
-            
+
             <Button asChild size="sm">
               <Link href="/book">
                 <Calendar className="w-4 h-4 mr-2" />
@@ -153,7 +154,7 @@ export default function Header() {
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
-            
+
             <Button
               variant="ghost"
               size="sm"
@@ -180,11 +181,10 @@ export default function Header() {
                   <Link
                     key={item.name}
                     href={item.href}
-                    className={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 ${
-                      pathname === item.href
-                        ? 'text-primary bg-primary/10'
-                        : 'text-foreground/80 hover:text-primary hover:bg-primary/5'
-                    }`}
+                    className={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 ${pathname === item.href
+                      ? 'text-primary bg-primary/10'
+                      : 'text-foreground/80 hover:text-primary hover:bg-primary/5'
+                      }`}
                     onClick={() => setIsOpen(false)}
                   >
                     {item.name}
@@ -192,7 +192,7 @@ export default function Header() {
                 ))}
                 <div className="pt-4 space-y-2">
                   <Button asChild size="sm" variant="outline" className="w-full">
-                    <Link href="tel:+442079460958" onClick={() => setIsOpen(false)}>
+                    <Link href={isNigerian ? Contact.LAGOS_PHONE : Contact.LONDON_PHONE} onClick={() => setIsOpen(false)}>
                       <Phone className="w-4 h-4 mr-2" />
                       Call Now
                     </Link>

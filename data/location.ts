@@ -36,6 +36,7 @@ export const locations = [
       parking: "Free parking available on-site",
       accessibility: "Fully wheelchair accessible"
     },
+    nearestStation: "Clapham Junction",
     nearby: [
       "Battersea Park - 10 min walk",
       "Clapham Junction Station - 5 min walk",
@@ -78,6 +79,7 @@ export const locations = [
       parking: "Public car parks nearby",
       accessibility: "Ground floor access"
     },
+    nearestStation: "Northampton Station",
     nearby: [
       "Grosvenor Shopping Centre - 2 min walk",
       "Market Square - 5 min walk",
@@ -119,6 +121,7 @@ export const locations = [
       accessibility: "Ground floor access",
       bus: "Nearby bus routes"
     },
+    nearestStation: "Mushin, Ikeja 102215, Lagos",
     nearby: [
       "Ajao Estate Market - 5 min walk",
       "Oslo Way - 2 min walk",

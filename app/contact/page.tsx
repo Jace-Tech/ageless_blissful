@@ -23,14 +23,17 @@ import Footer from '@/components/footer'
 import Link from 'next/link'
 import { toast } from 'sonner'
 import { Contact } from '@/data/contants'
+import { useCountry } from '@/hooks/use-country'
+import { locations } from '@/data/location'
 
 const contactInfo = [
   {
     icon: Phone,
     title: "Phone",
     details: [
-      { label: "London", value: "+44 20 7946 0958", href: "tel:+442079460958" },
-      { label: "Northampton", value: "+44 1604 123456", href: "tel:+441604123456" }
+      { label: "London", value: Contact.LONDON_PHONE, href: `tel:${Contact.LONDON_PHONE}` },
+      { label: "Northampton", value: Contact.NORTHAMPTON_PHONE, href: `tel:${Contact.NORTHAMPTON_PHONE}` },
+      { label: "Lagos", value: Contact.LAGOS_PHONE, href: `tel:${Contact.LAGOS_PHONE}` },
     ]
   },
   {
@@ -38,7 +41,7 @@ const contactInfo = [
     title: "Email",
     details: [
       { label: "General Inquiries", value: Contact.INFO_EMAIL, href: `mailto:${Contact.INFO_EMAIL}` },
-      { label: "Bookings", value: Contact.BOOKING_EMAIL, href: `mailto:${Contact.BOOKING_EMAIL}` }
+      { label: "Bookings", value: Contact.BOOKING_EMAIL, href: `mailto:${Contact.BOOKING_EMAIL}` },
     ]
   },
   {
@@ -72,6 +75,7 @@ const subjects = [
 ]
 
 export default function ContactPage() {
+  const { isNigerian } = useCountry()
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -124,6 +128,15 @@ export default function ContactPage() {
       setIsSubmitting(false)
     }
   }
+
+  const details = locations.reduce((acc, location) => {
+    return {
+      ...acc,
+      [location.id]: location,
+    }
+  }, {})
+
+
 
   return (
     <div className="min-h-screen">
@@ -353,7 +366,7 @@ export default function ContactPage() {
                           <p className="text-sm text-muted-foreground">Speak with our team immediately</p>
                         </div>
                         <Button asChild variant="outline">
-                          <Link href="tel:+442079460958">Call Now</Link>
+                          <Link href={`tel:${isNigerian ? Contact.LAGOS_PHONE : Contact.LONDON_PHONE}`}>Call Now</Link>
                         </Button>
                       </div>
                     </CardContent>
@@ -442,87 +455,50 @@ export default function ContactPage() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {/* London Map */}
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              <Card className="border-0 bg-card/50 backdrop-blur-sm">
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold mb-4 flex items-center">
-                    <MapPin className="w-5 h-5 text-primary mr-2" />
-                    London Clinic
-                  </h3>
-                  <div className="relative aspect-[16/10] bg-muted rounded-lg overflow-hidden mb-4">
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="text-center space-y-2">
-                        <MapPin className="w-12 h-12 text-primary mx-auto" />
-                        <p className="text-muted-foreground">Interactive map coming soon</p>
-                        <p className="text-sm text-muted-foreground">
-                          151 Lavender Hill, London SW11 5QJ
-                        </p>
+          <div className="grid align-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {locations.map((location, index) => (
+              <motion.div
+                initial={{ opacity: 0, x: (index === 0 ? -1 : 1) * 20 * (index + 1) }}
+                whileInView={{ opacity: 1, x: 0, transition: { delay: index * 0.2 } }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+              >
+                <Card className="border-0 bg-card/50 backdrop-blur-sm">
+                  <CardContent className="p-6">
+                    <h3 className="text-xl font-semibold mb-4 flex items-center">
+                      <MapPin className="w-5 h-5 text-primary mr-2" />
+                      {location.name}
+                    </h3>
+                    <div className="relative aspect-[16/10] bg-muted rounded-lg overflow-hidden mb-4">
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="text-center space-y-2">
+                          <MapPin className="w-12 h-12 text-primary mx-auto" />
+                          <p className="text-muted-foreground">Interactive map coming soon</p>
+                          <p className="text-sm text-muted-foreground">
+                            {location.address}
+                          </p>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <div className="space-y-2 text-sm">
-                    <p><strong>Address:</strong> 151 Lavender Hill, London SW11 5QJ</p>
-                    <p><strong>Phone:</strong> <Link href="tel:+442079460958" className="text-primary hover:underline">+44 20 7946 0958</Link></p>
-                    <p><strong>Nearest Station:</strong> Clapham Junction (5 min walk)</p>
-                  </div>
-                  <Button asChild className="w-full mt-4">
-                    <Link href="/locations#london">
-                      View Location Details
-                    </Link>
-                  </Button>
-                </CardContent>
-              </Card>
-            </motion.div>
-
-            {/* Northampton Map */}
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              <Card className="border-0 bg-card/50 backdrop-blur-sm">
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold mb-4 flex items-center">
-                    <MapPin className="w-5 h-5 text-primary mr-2" />
-                    Northampton Clinic
-                  </h3>
-                  <div className="relative aspect-[16/10] bg-muted rounded-lg overflow-hidden mb-4">
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="text-center space-y-2">
-                        <MapPin className="w-12 h-12 text-primary mx-auto" />
-                        <p className="text-muted-foreground">Interactive map coming soon</p>
-                        <p className="text-sm text-muted-foreground">
-                          Abington Street, Northampton NN1 2AJ
-                        </p>
-                      </div>
+                    <div className="space-y-2 text-sm">
+                      <p><strong>Address:</strong> {location.address}</p>
+                      <p><strong>Phone:</strong> <Link href={`tel:${location.phone}`} className="text-primary hover:underline">{location.phone}</Link></p>
+                      <p><strong>Nearest Station:</strong> {location.nearestStation}</p>
                     </div>
-                  </div>
-                  <div className="space-y-2 text-sm">
-                    <p><strong>Address:</strong> Abington Street, Northampton NN1 2AJ</p>
-                    <p><strong>Phone:</strong> <Link href="tel:+441604123456" className="text-primary hover:underline">+44 1604 123456</Link></p>
-                    <p><strong>Nearest Station:</strong> Northampton Station (10 min walk)</p>
-                  </div>
-                  <Button asChild className="w-full mt-4">
-                    <Link href="/locations#northampton">
-                      View Location Details
-                    </Link>
-                  </Button>
-                </CardContent>
-              </Card>
-            </motion.div>
+                    <Button asChild className="w-full mt-4">
+                      <Link href={`/locations#${location.id}`}>
+                        View Location Details
+                      </Link>
+                    </Button>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
           </div>
         </div>
-      </section>
+      </section >
 
       <Footer />
-    </div>
+    </div >
   )
 }

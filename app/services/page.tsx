@@ -266,6 +266,13 @@ export default function ServicesPage() {
     <div className="min-h-screen">
       <Header />
       
+      {/* Promotional Banner */}
+      <div className="bg-gradient-to-r from-rose-500 to-pink-500 text-white py-3 px-4 text-center">
+        <p className="text-lg font-medium">
+          🎉 Limited Time Offer: <span className="font-bold">50% off for models</span> and <span className="font-bold">25% off all services</span> - Book your consultation today! 🎉
+        </p>
+      </div>
+      
       {/* Hero Section */}
       <section className="pt-24 pb-16 bg-gradient-to-br from-primary/10 via-background to-secondary/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

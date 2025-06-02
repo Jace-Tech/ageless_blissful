@@ -32,11 +32,11 @@ const LocationSection: React.FC<locationProps> = ({ subtitle, title }) => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {locations.map((location, index) => (
             <motion.div
               key={location.id}
-              initial={{ opacity: 0, x: -30 }}
+              initial={{ opacity: 0, x: (index === 0 ? -1 : 1) * 30 * (index + 1) }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
