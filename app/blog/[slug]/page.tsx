@@ -4,11 +4,11 @@ import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { 
-  Calendar, 
-  Clock, 
-  User, 
-  ArrowLeft, 
+import {
+  Calendar,
+  Clock,
+  User,
+  ArrowLeft,
   Share2,
   BookOpen,
   Tag,
@@ -66,7 +66,7 @@ const blogPosts = [
       <p>At Ageless Blissful, our qualified practitioners have extensive experience in Botox treatments and are committed to achieving natural, beautiful results for every client.</p>
     `,
     image: "https://img.freepik.com/premium-photo/clinica-de-estetica-esthetician-wearing-lab-coat-explaining-botox-procedure-female-patient_579344-16316.jpg",
-    author: "Juliet Asemota",
+    author: "Juliet Simon Peter",
     date: "2024-01-15",
     readTime: "5 min read",
     category: "Treatment Guide",
@@ -129,7 +129,7 @@ const blogPosts = [
       <p>Remember, your skincare routine should complement, not compete with, your professional treatments. Always consult with your aesthetic practitioner for personalized advice.</p>
     `,
     image: "https://i.pinimg.com/originals/61/1c/f7/611cf76d55a9f04df7098381638e806c.png",
-    author: "Juliet Asemota",
+    author: "Juliet Simon Peter",
     date: "2024-01-10",
     readTime: "7 min read",
     category: "Skincare",
@@ -197,7 +197,7 @@ const blogPosts = [
       <p>At Ageless Blissful, we're excited to offer this innovative, natural approach to skin rejuvenation. Contact us to learn more about how PRP therapy can help you achieve your skin goals.</p>
     `,
     image: "https://i.pinimg.com/originals/e7/59/52/e759525a0a02a1ab6955fd13a5b70105.jpg",
-    author: "Juliet Asemota",
+    author: "Juliet Simon Peter",
     date: "2024-01-05",
     readTime: "6 min read",
     category: "Treatment Guide",
@@ -273,7 +273,7 @@ const blogPosts = [
       <p>At Ageless Blissful, we pride ourselves on meeting all these criteria. Our qualified practitioners are committed to providing safe, effective treatments in a professional, caring environment.</p>
     `,
     image: "https://i.pinimg.com/originals/1e/14/5b/1e145b7b9133b8d24cd7184a8208621d.jpg",
-    author: "Juliet Asemota",
+    author: "Juliet Simon Peter",
     date: "2023-12-28",
     readTime: "8 min read",
     category: "Safety",
@@ -302,7 +302,7 @@ const relatedPosts = [
 
 export default function BlogPostPage({ params }: { params: { slug: string } }) {
   const post = blogPosts.find(p => p.id === params.slug)
-  
+
   if (!post) {
     notFound()
   }
@@ -312,7 +312,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
   return (
     <div className="min-h-screen">
       <Header />
-      
+
       {/* Hero Section */}
       <section className="pt-24 pb-16 bg-gradient-to-br from-primary/10 via-background to-secondary/10">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -328,7 +328,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                 Back to Blog
               </Link>
             </Button>
-            
+
             <div className="space-y-4">
               <div className="flex items-center space-x-4 text-sm text-muted-foreground">
                 <Badge variant="secondary">{post.category}</Badge>
@@ -341,15 +341,15 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                   <span>{post.readTime}</span>
                 </div>
               </div>
-              
+
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
                 {post.title}
               </h1>
-              
+
               <p className="text-xl text-muted-foreground leading-relaxed">
                 {post.excerpt}
               </p>
-              
+
               <div className="flex items-center justify-between pt-4">
                 <div className="flex items-center space-x-3">
                   <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
@@ -360,7 +360,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                     <p className="text-sm text-muted-foreground">Lead Aesthetic Practitioner</p>
                   </div>
                 </div>
-                
+
                 <Button variant="outline" size="sm">
                   <Share2 className="w-4 h-4 mr-2" />
                   Share
@@ -401,11 +401,11 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
               transition={{ duration: 0.8, delay: 0.3 }}
               className="lg:col-span-3"
             >
-              <div 
+              <div
                 className="prose prose-lg max-w-none prose-headings:text-foreground prose-p:text-muted-foreground prose-strong:text-foreground prose-ul:text-muted-foreground prose-li:text-muted-foreground"
                 dangerouslySetInnerHTML={{ __html: post.content }}
               />
-              
+
               {/* Tags */}
               <div className="mt-12 pt-8 border-t">
                 <h3 className="text-lg font-semibold mb-4 flex items-center">

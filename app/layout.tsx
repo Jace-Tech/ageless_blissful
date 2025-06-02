@@ -117,7 +117,7 @@ export default function RootLayout({
               ],
               "founder": {
                 "@type": "Person",
-                "name": "Juliet Asemota",
+                "name": "Juliet Simon Peter",
                 "jobTitle": "Lead Aesthetic Practitioner",
                 "description": "Experienced aesthetic practitioner with nursing background specializing in natural enhancement treatments."
               }

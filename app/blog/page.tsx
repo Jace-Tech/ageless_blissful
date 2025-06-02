@@ -3,11 +3,11 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
-import { 
-  Calendar, 
-  Clock, 
-  User, 
-  ArrowRight, 
+import {
+  Calendar,
+  Clock,
+  User,
+  ArrowRight,
   Search,
   Tag,
   BookOpen,
@@ -29,7 +29,7 @@ const blogPosts = [
     excerpt: "Separating fact from fiction about Botox treatments. Learn the truth about safety, effectiveness, and what to expect from this popular aesthetic treatment.",
     content: "Botox has become one of the most popular non-surgical aesthetic treatments worldwide, but with popularity comes misconceptions...",
     image: "https://img.freepik.com/premium-photo/clinica-de-estetica-esthetician-wearing-lab-coat-explaining-botox-procedure-female-patient_579344-16316.jpg",
-    author: "Juliet Asemota",
+    author: "Juliet Simon Peter",
     date: "2024-01-15",
     readTime: "5 min read",
     category: "Treatment Guide",
@@ -42,7 +42,7 @@ const blogPosts = [
     excerpt: "Discover how to create a skincare routine that enhances and prolongs the results of your professional aesthetic treatments.",
     content: "A well-designed skincare routine is essential for maintaining and enhancing the results of professional aesthetic treatments...",
     image: "https://i.pinimg.com/originals/61/1c/f7/611cf76d55a9f04df7098381638e806c.png",
-    author: "Juliet Asemota",
+    author: "Juliet Simon Peter",
     date: "2024-01-10",
     readTime: "7 min read",
     category: "Skincare",
@@ -55,7 +55,7 @@ const blogPosts = [
     excerpt: "Explore how Platelet-Rich Plasma therapy harnesses your body's natural healing power for beautiful, rejuvenated skin.",
     content: "PRP therapy represents a revolutionary approach to skin rejuvenation, using your body's own healing mechanisms...",
     image: "https://i.pinimg.com/originals/e7/59/52/e759525a0a02a1ab6955fd13a5b70105.jpg",
-    author: "Juliet Asemota",
+    author: "Juliet Simon Peter",
     date: "2024-01-05",
     readTime: "6 min read",
     category: "Treatment Guide",
@@ -68,7 +68,7 @@ const blogPosts = [
     excerpt: "Essential tips for selecting a qualified and experienced aesthetic practitioner for safe, effective treatments.",
     content: "Choosing the right aesthetic practitioner is crucial for achieving safe, natural-looking results...",
     image: "https://i.pinimg.com/originals/1e/14/5b/1e145b7b9133b8d24cd7184a8208621d.jpg",
-    author: "Juliet Asemota",
+    author: "Juliet Simon Peter",
     date: "2023-12-28",
     readTime: "8 min read",
     category: "Safety",
@@ -93,7 +93,7 @@ export default function BlogPage() {
   return (
     <div className="min-h-screen">
       <Header />
-      
+
       {/* Hero Section */}
       <section className="pt-24 pb-16 bg-gradient-to-br from-primary/10 via-background to-secondary/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -109,7 +109,7 @@ export default function BlogPage() {
             <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
               Expert insights, treatment guides, and tips for your aesthetic journey
             </p>
-            
+
             {/* Search Bar */}
             <div className="max-w-2xl mx-auto pt-8">
               <div className="relative">
@@ -139,7 +139,7 @@ export default function BlogPage() {
               <TrendingUp className="w-6 h-6 text-primary" />
               <h2 className="text-3xl md:text-4xl font-bold">Featured Articles</h2>
             </div>
-            
+
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {featuredPosts.map((post, index) => (
                 <motion.div
@@ -163,7 +163,7 @@ export default function BlogPage() {
                           Featured
                         </Badge>
                       </div>
-                      
+
                       <div className="p-6 space-y-4">
                         <div className="flex items-center space-x-4 text-sm text-muted-foreground">
                           <Badge variant="secondary">{post.category}</Badge>
@@ -176,21 +176,21 @@ export default function BlogPage() {
                             <span>{post.readTime}</span>
                           </div>
                         </div>
-                        
+
                         <h3 className="text-xl font-bold group-hover:text-primary transition-colors line-clamp-2">
                           {post.title}
                         </h3>
-                        
+
                         <p className="text-muted-foreground line-clamp-3 leading-relaxed">
                           {post.excerpt}
                         </p>
-                        
+
                         <div className="flex items-center justify-between pt-4">
                           <div className="flex items-center space-x-2">
                             <User className="w-4 h-4 text-muted-foreground" />
                             <span className="text-sm text-muted-foreground">{post.author}</span>
                           </div>
-                          
+
                           <Button asChild variant="ghost" size="sm">
                             <Link href={`/blog/${post.id}`}>
                               Read More
@@ -225,7 +225,7 @@ export default function BlogPage() {
                   <BookOpen className="w-6 h-6 text-primary" />
                   <h2 className="text-3xl md:text-4xl font-bold">Recent Articles</h2>
                 </div>
-                
+
                 <div className="space-y-8">
                   {recentPosts.map((post, index) => (
                     <motion.div
@@ -246,7 +246,7 @@ export default function BlogPage() {
                                 className="object-cover group-hover:scale-105 transition-transform duration-300"
                               />
                             </div>
-                            
+
                             <div className="md:col-span-2 p-6 space-y-4">
                               <div className="flex items-center space-x-4 text-sm text-muted-foreground">
                                 <Badge variant="secondary">{post.category}</Badge>
@@ -259,21 +259,21 @@ export default function BlogPage() {
                                   <span>{post.readTime}</span>
                                 </div>
                               </div>
-                              
+
                               <h3 className="text-xl font-bold group-hover:text-primary transition-colors">
                                 {post.title}
                               </h3>
-                              
+
                               <p className="text-muted-foreground line-clamp-2 leading-relaxed">
                                 {post.excerpt}
                               </p>
-                              
+
                               <div className="flex items-center justify-between pt-4">
                                 <div className="flex items-center space-x-2">
                                   <User className="w-4 h-4 text-muted-foreground" />
                                   <span className="text-sm text-muted-foreground">{post.author}</span>
                                 </div>
-                                
+
                                 <Button asChild variant="ghost" size="sm">
                                   <Link href={`/blog/${post.id}`}>
                                     Read More

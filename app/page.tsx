@@ -351,7 +351,7 @@ export default function HomePage() {
               className="space-y-6"
             >
               <h2 className="text-3xl md:text-4xl font-bold">
-                Meet <span className="gradient-text">Juliet Asemota</span>
+                Meet <span className="gradient-text">Juliet Simon Peter</span>
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
                 With a background in nursing and years of specialized training in aesthetic medicine,
@@ -389,7 +389,7 @@ export default function HomePage() {
               <div className="relative aspect-[4/5] rounded-2xl overflow-hidden">
                 <Image
                   src="https://i.ytimg.com/vi/x3Pp0CI1l3M/maxresdefault.jpg"
-                  alt="Juliet Asemota - Lead Aesthetic Practitioner"
+                  alt="Juliet Simon Peter - Lead Aesthetic Practitioner"
                   fill
                   className="object-cover"
                 />

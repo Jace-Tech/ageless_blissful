@@ -31,7 +31,7 @@ const faqCategories = [
       },
       {
         question: "What qualifications do your practitioners have?",
-        answer: "Our lead practitioner, Juliet Asemota, is a registered nurse with over 10 years of experience and specialized training in aesthetic medicine. She holds certifications in Botox, dermal fillers, PRP therapy, and other advanced aesthetic treatments."
+        answer: "Our lead practitioner, Juliet Simon Peter, is a registered nurse with 2 years of experience and specialized training in aesthetic medicine. She holds certifications in Botox, dermal fillers, PRP therapy, and other advanced aesthetic treatments."
       },
       {
         question: "How do I book an appointment?",
@@ -128,8 +128,8 @@ export default function FAQPage() {
   const [openQuestions, setOpenQuestions] = useState<string[]>([])
 
   const toggleQuestion = (questionId: string) => {
-    setOpenQuestions(prev => 
-      prev.includes(questionId) 
+    setOpenQuestions(prev =>
+      prev.includes(questionId)
         ? prev.filter(id => id !== questionId)
         : [...prev, questionId]
     )
@@ -139,14 +139,14 @@ export default function FAQPage() {
     ...category,
     questions: category.questions.filter(
       q => q.question.toLowerCase().includes(searchTerm.toLowerCase()) ||
-           q.answer.toLowerCase().includes(searchTerm.toLowerCase())
+        q.answer.toLowerCase().includes(searchTerm.toLowerCase())
     )
   })).filter(category => category.questions.length > 0)
 
   return (
     <div className="min-h-screen">
       <Header />
-      
+
       {/* Hero Section */}
       <section className="pt-24 pb-16 bg-gradient-to-br from-primary/10 via-background to-secondary/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -162,7 +162,7 @@ export default function FAQPage() {
             <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
               Find answers to common questions about our aesthetic treatments and services
             </p>
-            
+
             {/* Search Bar */}
             <div className="max-w-2xl mx-auto pt-8">
               <div className="relative">
@@ -197,11 +197,10 @@ export default function FAQPage() {
                   <button
                     key={category.id}
                     onClick={() => setActiveCategory(category.id)}
-                    className={`w-full text-left p-4 rounded-lg transition-all duration-200 ${
-                      activeCategory === category.id
-                        ? 'bg-primary text-primary-foreground shadow-lg'
-                        : 'bg-card hover:bg-card/80 border'
-                    }`}
+                    className={`w-full text-left p-4 rounded-lg transition-all duration-200 ${activeCategory === category.id
+                      ? 'bg-primary text-primary-foreground shadow-lg'
+                      : 'bg-card hover:bg-card/80 border'
+                      }`}
                   >
                     <div className="flex items-center space-x-3">
                       <category.icon className="w-5 h-5" />
@@ -228,7 +227,7 @@ export default function FAQPage() {
                       {filteredCategories.reduce((acc, cat) => acc + cat.questions.length, 0)} results
                     </Badge>
                   </div>
-                  
+
                   {filteredCategories.length === 0 ? (
                     <Card className="border-0 bg-card/50 backdrop-blur-sm">
                       <CardContent className="p-8 text-center">
@@ -249,7 +248,7 @@ export default function FAQPage() {
                           {category.questions.map((faq, index) => {
                             const questionId = `${category.id}-${index}`
                             const isOpen = openQuestions.includes(questionId)
-                            
+
                             return (
                               <Card key={questionId} className="border-0 bg-card/50 backdrop-blur-sm">
                                 <CardContent className="p-0">
@@ -261,14 +260,13 @@ export default function FAQPage() {
                                       <h4 className="text-lg font-semibold pr-4">
                                         {faq.question}
                                       </h4>
-                                      <ChevronDown 
-                                        className={`w-5 h-5 text-muted-foreground transition-transform ${
-                                          isOpen ? 'rotate-180' : ''
-                                        }`}
+                                      <ChevronDown
+                                        className={`w-5 h-5 text-muted-foreground transition-transform ${isOpen ? 'rotate-180' : ''
+                                          }`}
                                       />
                                     </div>
                                   </button>
-                                  
+
                                   <AnimatePresence>
                                     {isOpen && (
                                       <motion.div
@@ -306,12 +304,12 @@ export default function FAQPage() {
                           <category.icon className="w-8 h-8 text-primary" />
                           <h2 className="text-2xl font-bold">{category.title}</h2>
                         </div>
-                        
+
                         <div className="space-y-4">
                           {category.questions.map((faq, index) => {
                             const questionId = `${category.id}-${index}`
                             const isOpen = openQuestions.includes(questionId)
-                            
+
                             return (
                               <motion.div
                                 key={questionId}
@@ -329,14 +327,13 @@ export default function FAQPage() {
                                         <h4 className="text-lg font-semibold pr-4">
                                           {faq.question}
                                         </h4>
-                                        <ChevronDown 
-                                          className={`w-5 h-5 text-muted-foreground transition-transform ${
-                                            isOpen ? 'rotate-180' : ''
-                                          }`}
+                                        <ChevronDown
+                                          className={`w-5 h-5 text-muted-foreground transition-transform ${isOpen ? 'rotate-180' : ''
+                                            }`}
                                         />
                                       </div>
                                     </button>
-                                    
+
                                     <AnimatePresence>
                                       {isOpen && (
                                         <motion.div
