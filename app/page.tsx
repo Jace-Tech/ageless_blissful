@@ -396,7 +396,7 @@ export default function HomePage() {
               </div>
               <div className="absolute -bottom-6 -right-6 bg-primary text-primary-foreground p-6 rounded-2xl shadow-xl">
                 <div className="text-center">
-                  <div className="text-2xl font-bold">5+</div>
+                  <div className="text-2xl font-bold">2+</div>
                   <div className="text-sm opacity-90">Years Experience</div>
                 </div>
               </div>
