@@ -42,7 +42,7 @@ const values = [
 ]
 
 const qualifications = [
-  "Registered Nurse with 10+ years experience",
+  "Registered Nurse with 2 years experience",
   "Advanced Aesthetic Medicine Certification",
   "Botox and Dermal Filler Specialist",
   "PRP Therapy Certified Practitioner",

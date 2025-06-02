@@ -236,13 +236,13 @@ export default function HomePage() {
             </div>
             <div className="text-center">
               <div className="text-4xl md:text-5xl font-bold text-primary mb-2">
-                <AnimatedCounter end={5} suffix="+" />
+                <AnimatedCounter end={2} suffix="+" />
               </div>
               <p className="text-muted-foreground">Years Experience</p>
             </div>
             <div className="text-center">
               <div className="text-4xl md:text-5xl font-bold text-primary mb-2">
-                <AnimatedCounter end={15} suffix="+" />
+                <AnimatedCounter end={6} suffix="+" />
               </div>
               <p className="text-muted-foreground">Treatments Offered</p>
             </div>
